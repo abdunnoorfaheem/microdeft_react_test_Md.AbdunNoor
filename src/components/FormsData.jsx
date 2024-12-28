@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const FormsData = () => {
 
@@ -29,15 +31,68 @@ const FormsData = () => {
     setInstructorName(e.target.value);
   }
 
-  console.log(title, description, badgeColor, instructorName);
+   let token = JSON.parse(localStorage.getItem("authToken"));
+
+   
+   let navigate = useNavigate();
+
+  useEffect(()=>{
+
+    if(!token){
+      navigate('/login');
+    }
+
+  },[])
+
+  let handleSubmit =async (e)=>{
+    e.preventDefault();
+
+
+ 
+    try {
+      let courseData = {
+        title: title,
+        description: description,
+        badge_text: badgeText,
+        badge_color: badgeColor,
+        instructor_name:instructorName
+      };
+      let postData = await axios.post(
+        "https://react-interview.crd4lc.easypanel.host/api/course",
+        courseData,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+
+          },
+        }
+      );
+      alert("Successfully Submitted");
+      console.log(postData);
+      
+
+      // setTimeout(() => {
+      //   navigate("/login");
+      // }, 2000);
+    } catch (error) {
+      console.log(error);
+    } 
+ 
+
+  }
   
+
+  // let dataCourses = axios.get('')
+
 
   return (
     <section className='bg-[url("./assets/background/backgroundFour.jpg")]'>
       <div className="container mx-auto flex justify-center items-center w-[100vw] h-[100vh]">
         <div className="bg-[#d8d4cf59] rounded-lg h-[500px] w-[700px]  flex justify-center items-center flex-col">
-          <h1 className="text-3xl font-bold py-3 underline">Form Data</h1>
-          <form action="" className="">
+          <h1 className="text-3xl font-bold py-3 underline">Add Course  Data</h1>
+          <form action="" method="POST">
             <div>
               <input
               onChange={handleTitle}
@@ -90,11 +145,15 @@ const FormsData = () => {
             </div>
             
             <div className="mt-3 flex justify-center">
-              <button className="bg-[#ececea] px-10 py-2 rounded-md font-bold">
+              <button onClick={handleSubmit} className="bg-[#ececea] px-10 py-2 rounded-md font-bold">
                 Submit
               </button>
             </div>
           </form>
+        </div>
+
+        <div>
+
         </div>
       </div>
     </section>
