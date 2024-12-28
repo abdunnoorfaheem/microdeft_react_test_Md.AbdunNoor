@@ -1,66 +1,156 @@
 import React from "react";
 import product from "../assets/product/productOne.jpg";
+import JS from "../assets/product/js.jpeg";
+import Mern from "../assets/product/mern.jpeg";
+import nodejs from "../assets/product/nodejs.png";
+import react from "../assets/product/react.jpg";
 
 const Cards = () => {
   return (
     <section className="">
-      <div className="container mx-auto py-5">
-        <div className="py-16 w-[100%] md:flex justify-between">
-          <div
-            className="w-[32%]"
+      <div className="container mx-auto md:flex justify-between py-20">
+        <div className="md:w-[23%] shadow-xl">
+          <div>
+            <img style={{ height: "250px", width: "100%" }} src={JS} alt="" />
+          </div>
+          <h2
             style={{
-              maxHeight: "500px",
-              maxWidth: "450px",
-              boxShadow: "5px 5px 6px 3px",
-              borderRadius: "10px",
-              boxSizing: "border-box",
+              fontSize: "28px",
+              textAlign: "center",
+              paddingTop: "5px",
+              fontFamily: "bold",
             }}
           >
-            <div>
-              <img
-                src={product}
-                alt=""
-                style={{ maxHeight: "170px", width: "450px" }}
-              />
-            </div>
-            <div>
-              <h1
-                style={{
-                  fontSize: "2em",
-                  fontFamily: "bold",
-                  marginTop: "5px",
-                  textAlign: "center",
-                }}
-              >
-                Title For Card
-              </h1>
-              <p
-                style={{
-                  fontSize: "1em",
-                  color: "gray",
-                  marginTop: "8px",
-                  textAlign: "center",
-                }}
-              >
-                Lorem ipsum dolor sit amet consectetur magni aspernatur.
-              </p>
-            </div>
-            <div>
-              <button
-                style={{
-                  backgroundColor: "lightBlue",
-                  width: "100%",
-                  paddingTop: "5px",
-                  paddingBottom: "5px",
-                  fontSize: "1em",
-                  fontFamily: "bold",
-                  marginTop: "15px",
-                  borderRadius: "4px",
-                }}
-              >
-                View Details
-              </button>
-            </div>
+            Javascript for Beginner
+          </h2>
+          <p style={{ color: "gray", textAlign: "center" }}>
+            JavaScript is the world's most popular programming language.
+            JavaScript is the programming language of the Web. JavaScript is
+            easy to learn. This tutorial will teach you JavaScript from basic to
+            advanced.
+          </p>
+          <div
+            style={{
+              border: "",
+              background: "lightgray",
+              fontFamily: "bold",
+              textAlign: "center",
+              paddingTop: "3px",
+              paddingBottom: "3px",
+              fontSize: "20px",
+            }}
+          >
+            <button>Course Details</button>
+          </div>
+        </div>
+        <div className="md:w-[23%] shadow-xl">
+          <div>
+            <img style={{ height: "250px", width: "100%" }} src={Mern} alt="" />
+          </div>
+          <h2
+            style={{
+              fontSize: "28px",
+              textAlign: "center",
+              paddingTop: "5px",
+              fontFamily: "bold",
+            }}
+          >
+            Mern for Beginner
+          </h2>
+          <p style={{ color: "gray", textAlign: "center" }}>
+            JavaScript is the world's most popular programming language.
+            JavaScript is the programming language of the Web. JavaScript is
+            easy to learn. This tutorial will teach you JavaScript from basic to
+            advanced.
+          </p>
+          <div
+            style={{
+              border: "",
+              background: "lightgray",
+              fontFamily: "bold",
+              textAlign: "center",
+              paddingTop: "3px",
+              paddingBottom: "3px",
+              fontSize: "20px",
+            }}
+          >
+            <button>Course Details</button>
+          </div>
+        </div>
+        <div className="md:w-[23%] shadow-xl">
+          <div>
+            <img
+              style={{ height: "250px", width: "100%" }}
+              src={nodejs}
+              alt=""
+            />
+          </div>
+          <h2
+            style={{
+              fontSize: "28px",
+              textAlign: "center",
+              paddingTop: "5px",
+              fontFamily: "bold",
+            }}
+          >
+            Node js for Beginner
+          </h2>
+          <p style={{ color: "gray", textAlign: "center" }}>
+            JavaScript is the world's most popular programming language.
+            JavaScript is the programming language of the Web. JavaScript is
+            easy to learn. This tutorial will teach you JavaScript from basic to
+            advanced.
+          </p>
+          <div
+            style={{
+              border: "",
+              background: "lightgray",
+              fontFamily: "bold",
+              textAlign: "center",
+              paddingTop: "3px",
+              paddingBottom: "3px",
+              fontSize: "20px",
+            }}
+          >
+            <button>Course Details</button>
+          </div>
+        </div>
+        <div className="md:w-[23%] shadow-xl">
+          <div>
+            <img
+              style={{ height: "250px", width: "100%" }}
+              src={react}
+              alt=""
+            />
+          </div>
+          <h2
+            style={{
+              fontSize: "28px",
+              textAlign: "center",
+              paddingTop: "5px",
+              fontFamily: "bold",
+            }}
+          >
+            React for Beginner
+          </h2>
+          <p style={{ color: "gray", textAlign: "center" }}>
+            JavaScript is the world's most popular programming language.
+            JavaScript is the programming language of the Web. JavaScript is
+            easy to learn. This tutorial will teach you JavaScript from basic to
+            advanced.
+          </p>
+          <div
+            style={{
+              border: "",
+              background: "lightgray",
+              fontFamily: "bold",
+              textAlign: "center",
+              paddingTop: "3px",
+              paddingBottom: "3px",
+              fontSize: "20px",
+            }}
+          >
+            <button>Course Details</button>
           </div>
         </div>
       </div>

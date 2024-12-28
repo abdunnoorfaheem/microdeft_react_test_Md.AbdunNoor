@@ -58,7 +58,7 @@ const FormsData = () => {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -95,10 +95,9 @@ const FormsData = () => {
     fetchData();
   }, []);
 
-  console.log(dataList);
+  // console.log(dataList);
 
   return (
-    // bg-[url("./assets/background/backgroundFour.jpg")]
     <section className="">
       <div className="flex justify-center items-center w-[100vw] py-12">
         <div className="bg-[#d8d4cf59] rounded-lg h-[500px] w-[700px]  flex justify-center items-center flex-col ">
@@ -110,7 +109,6 @@ const FormsData = () => {
                 className="outline-none px-6 py-3 mt-2 rounded-lg"
                 placeholder="Title"
                 type="text"
-              
               />
             </div>
             <div>
@@ -119,7 +117,6 @@ const FormsData = () => {
                 className="outline-none px-6 py-3 mt-2 rounded-lg"
                 placeholder="Description"
                 type="text"
-                
               />
             </div>
             <div>
@@ -128,7 +125,6 @@ const FormsData = () => {
                 className="outline-none px-6 py-3 mt-2 rounded-lg"
                 placeholder="Badge Text"
                 type="text"
-                
               />
             </div>
             <div>
@@ -137,7 +133,6 @@ const FormsData = () => {
                 className="outline-none px-6 py-3 mt-2 rounded-lg"
                 placeholder="Badge Color"
                 type="text"
-               
               />
             </div>
             <div>
@@ -161,29 +156,34 @@ const FormsData = () => {
             </div>
           </form>
         </div>
-
-        
       </div>
-      <h3 className="mt-20  text-xl md:text-4xl text-center font-bold mb-8">The List Of Courses</h3>
+      <h3 className="mt-20  text-xl md:text-4xl text-center font-bold mb-8">
+        The List Of Courses
+      </h3>
       <div className="w-[100%] flex flex-wrap justify-center items-center gap-4 mt-3">
-        
-          {dataList.map((item) => (
-            <div className="w-[29%] shadow-lg rounded-xl  bg-gray-100">
-              <div>
-                            <img
-                              src={Coding}
-                              alt=""
-                              className="h-[350px] w-full"
-                            />
-                          </div>
-              <p  className="text-3xl text-center font-bold">Title: {item.title}</p>
-              <p className="text-2xl text-center ">Description: {item.description}</p>
-              <p className="text-2xl text-center ">Badge_text: {item.badge_text}</p>
-              <p className="text-2xl text-center">Badge_color: {item.badge_color}</p>
-              <p className="text-2xl text-center">Instructor_name{item.instructor_name}</p>
+        {dataList.map((item) => (
+          <div className="w-[29%] shadow-lg rounded-xl  bg-gray-100">
+            <div>
+              <img src={Coding} alt="" className="h-[350px] w-full" />
             </div>
-          ))}
-        </div>
+            <p className="text-3xl text-center font-bold">
+              Title: {item.title}
+            </p>
+            <p className="text-2xl text-center ">
+              Description: {item.description}
+            </p>
+            <p className="text-2xl text-center ">
+              Badge_text: {item.badge_text}
+            </p>
+            <p className="text-2xl text-center">
+              Badge_color: {item.badge_color}
+            </p>
+            <p className="text-2xl text-center">
+              Instructor_name{item.instructor_name}
+            </p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

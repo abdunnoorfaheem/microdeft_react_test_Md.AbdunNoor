@@ -16,7 +16,7 @@ const Nav = () => {
           </Link>
 
           <Link to="/form">
-            <li className="text-lg md:text-4xl font-bold underline">Form</li>
+            <li className="text-lg md:text-4xl font-bold underline">Courses</li>
           </Link>
           <Link to="/cards">
             <li className="text-lg md:text-4xl font-bold underline">Cards</li>
