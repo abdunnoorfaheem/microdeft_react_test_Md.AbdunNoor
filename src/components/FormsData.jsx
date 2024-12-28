@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import product from "../assets/product/productOne.jpg";
-import Coding from "../assets/product/coding.jpg"
+import Coding from "../assets/product/coding.jpg";
 
 const FormsData = () => {
   let [title, setTitle] = useState("");
