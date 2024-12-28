@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
+  //   let [token, setToken]=useState("");
 
   let handleEmail = (e) => {
     setEmail(e.target.value);
@@ -11,13 +14,40 @@ const Login = () => {
   let handlePassword = (e) => {
     setPassword(e.target.value);
   };
+  let navigate = useNavigate();
 
-  let handleSubmit = (e) => {
+  let handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e);
-  };
+    try {
+      let userData = {
+        email: email,
+        password: password,
+      };
+      let postData = await axios.post(
+        "https://react-interview.crd4lc.easypanel.host/api/login",
+        userData,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      alert("Successfully Log In");
+      // setToken(postData.data.data.token);
 
-  // console.log(email, password);
+      localStorage.setItem(
+        "authToken",
+        JSON.stringify(postData.data.data.token)
+      );
+
+      setTimeout(() => {
+        navigate("/form");
+      }, 2000);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <section className='bg-[url("./assets/background/backgroundThree.jpg")]'>
