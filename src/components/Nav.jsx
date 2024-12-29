@@ -18,9 +18,9 @@ const Nav = () => {
           <Link to="/form">
             <li className="text-lg md:text-4xl font-bold underline">Courses</li>
           </Link>
-          <Link to="/cards">
+          {/* <Link to="/cards">
             <li className="text-lg md:text-4xl font-bold underline">Cards</li>
-          </Link>
+          </Link> */}
         </ul>
       </nav>
     </section>

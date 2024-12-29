@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Coding from "../assets/product/coding.jpg";
+import JS from "../assets/product/js.jpeg";
 
 const FormsData = () => {
   let [title, setTitle] = useState("");
@@ -162,25 +163,78 @@ const FormsData = () => {
       </h3>
       <div className="w-[100%] flex flex-wrap justify-center items-center gap-4 mt-3">
         {dataList.map((item) => (
-          <div className="w-[29%] shadow-lg rounded-xl  bg-gray-100">
-            <div>
-              <img src={Coding} alt="" className="h-[350px] w-full" />
+          // <div className="w-[29%] shadow-lg rounded-xl  bg-gray-100">
+          //   <div>
+          //     <img src={Coding} alt="" className="h-[350px] w-full" />
+          //   </div>
+          //   <p className="text-3xl text-center font-bold">
+          //     Title: {item.title}
+          //   </p>
+          //   <p className="text-2xl text-center ">
+          //     Description: {item.description}
+          //   </p>
+          //   <p className="text-2xl text-center ">
+          //     Badge_text: {item.badge_text}
+          //   </p>
+          //   <p className="text-2xl text-center">
+          //     Badge_color: {item.badge_color}
+          //   </p>
+          //   <p className="text-2xl text-center">
+          //     Instructor_name{item.instructor_name}
+          //   </p>
+          // </div>
+          <div className="md:w-[23%] shadow-xl">
+            <div style={{ position: "relative" }}>
+              <div>
+                <img
+                  style={{ height: "250px", width: "100%" }}
+                  src={JS}
+                  alt=""
+                />
+              </div>
+              <div
+                className=""
+                style={{ backgroundColor: item.badge_color ,width:"20%",position:"absolute",top:"226px"}}
+              >
+                {item.badge_text}
+              </div>
             </div>
-            <p className="text-3xl text-center font-bold">
-              Title: {item.title}
+            <h2
+              style={{
+                fontSize: "28px",
+                textAlign: "center",
+                paddingTop: "5px",
+                fontFamily: "bold",
+              }}
+            >
+              {item.title}
+            </h2>
+            <h3 style={{
+                fontSize: "24px",
+                textAlign: "center",
+                paddingTop: "5px",
+                fontFamily: "bold",
+              }}>{item.instructor_name}</h3>
+            <p style={{ color: "gray", textAlign: "center",paddingBottom:"8px" }}>{item.description}</p>
+            <p style={{ color: "gray", textAlign: "center" }}>
+              JavaScript is the world's most popular programming language.
+              JavaScript is the programming language of the Web. JavaScript is
+              easy to learn. This tutorial will teach you JavaScript from basic
+              to advanced.
             </p>
-            <p className="text-2xl text-center ">
-              Description: {item.description}
-            </p>
-            <p className="text-2xl text-center ">
-              Badge_text: {item.badge_text}
-            </p>
-            <p className="text-2xl text-center">
-              Badge_color: {item.badge_color}
-            </p>
-            <p className="text-2xl text-center">
-              Instructor_name{item.instructor_name}
-            </p>
+            <div
+              style={{
+                border: "",
+                background: "lightgray",
+                fontFamily: "bold",
+                textAlign: "center",
+                paddingTop: "3px",
+                paddingBottom: "3px",
+                fontSize: "20px",
+              }}
+            >
+              <button>Course Details</button>
+            </div>
           </div>
         ))}
       </div>
